@@ -79,7 +79,7 @@ ARG SECRET_KEY_BASE
 WORKDIR /usr/src/app
 ENV RAILS_ENV=production
 ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
-RUN gem install bundler:2.2.3
+RUN gem install bundler:2.4.19
 RUN bundle install
 RUN rake db:migrate
 RUN rails assests:precompile
