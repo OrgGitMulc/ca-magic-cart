@@ -82,5 +82,5 @@ ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 RUN gem install bundler:2.4.19
 RUN bundle install
 RUN rake db:migrate
-RUN rails assests:precompile
+RUN rails assets:precompile
 CMD ["rails", "server"]
