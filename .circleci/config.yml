@@ -20,6 +20,20 @@ orbs:
   ruby: circleci/ruby:3.2.4
 
 jobs:
+  test:
+    executor: ruby-executor
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: Set up database
+          command: |
+            bundle exec rake db:create RAILS_ENV=test
+            bundle exec rake db:schema:load RAILS_ENV=test
+      - run:
+          name: Run tests
+          command: bundle exec rails test
+
   build:
     working_directory: ~/ca-magic-cart
     docker:
