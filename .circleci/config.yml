@@ -1,12 +1,33 @@
-version: 2.1
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - main
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - build
+
+
+orbs:
+  ruby: circleci/ruby:3.2.4
 
 executors:
   ruby-executor:
     docker:
       - image: cimg/ruby:3.2.3-node
-
-orbs:
-  ruby: circleci/ruby@1.1.0
 
 jobs:
   test:
@@ -24,39 +45,28 @@ jobs:
           command: bundle exec rails test
 
   build:
+    working_directory: ~/ca-magic-cart
     docker:
-      - image: cimg/ruby:3.2.3-node
+      - image: cimg/ruby:3.1.0
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.7
-          docker_layer_caching: true
+      - setup_remote_docker
       - run:
-          name: Docker login
-          command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          name: docker-login
+          command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run:
-          name: Build Docker image
+          name: build-docker-image
           command: docker build -t $IMAGE_NAME:latest . --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE
       - run:
-          name: Push Docker image
+          name: publish-docker-image
           command: docker push $IMAGE_NAME
       - run:
-          name: Run Docker image
-          command: docker run -d --name $CONTAINER_NAME -p 3000:3000 $IMAGE_NAME
-
+          name: run-docker-image
+          command: docker run -p 3000:3000 -d $IMAGE_NAME
   deploy:
     docker:
-      - image: cimg/ruby:3.2.3-node
+      - image: cimg/ruby:3.1.0
     steps:
       - run:
-          name: Deploy application
-          command: |
-            ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS << 'EOF'
-              export CONTAINER_NAME="$CONTAINER_NAME"
-              export IMAGE_NAME="$IMAGE_NAME"
-              cd /path/to/your/application || exit
-              docker stop $CONTAINER_NAME || true
-              docker rm $CONTAINER_NAME || true
-              docker pull $IMAGE_NAME
-              docker run -d --name $CONTAINER_NAME -p 3000:3000 $IMAGE_NAME
-            EOF
+          name: deploy-application
+          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export CONTAINER_NAME=\"$CONTAINER_NAME\"; export IMAGE_NAME=\"$IMAGE_NAME\"; rm -rf ca-magic-cart/; git clone https://github.com/OrgGitMulc/ca-magic-cart; source ca-magic-cart/deploy.sh"
