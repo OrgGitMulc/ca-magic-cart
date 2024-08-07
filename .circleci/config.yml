@@ -2,6 +2,11 @@ workflows:
   version: 2
   build:
     jobs:
+      - test:
+          filters:
+            branches:
+              only:
+                - main
       - build:
           filters:
             branches:
@@ -18,6 +23,11 @@ workflows:
 
 orbs:
   ruby: circleci/ruby:3.2.4
+
+executors:
+  ruby-executor:
+    docker:
+      - image: cimg/ruby:3.2.3-node
 
 jobs:
   test:
