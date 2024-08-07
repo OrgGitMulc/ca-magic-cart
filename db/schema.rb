@@ -22,9 +22,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_231644) do
     t.text "description"
     t.decimal "price"
     t.integer "category_id", null: false
+    t.integer "subcategory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["subcategory_id"], name: "index_products_on_subcategory_id"
   end
 
   create_table "subcategories", force: :cascade do |t|
@@ -36,5 +38,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_231644) do
   end
 
   add_foreign_key "products", "categories"
+  add_foreign_key "products", "subcategories"
   add_foreign_key "subcategories", "categories"
 end
