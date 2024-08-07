@@ -1,13 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  price: 9.99
+single:
+  name: Yuriko, the Tiger's Shadow
+  description: Legendary Creature
+  price: 1.62
   category: one
 
-two:
-  name: MyString
-  description: MyText
+booster:
+  name: Zendikar Rising Draft Booster
+  description: Booster for draft 15 cards inside
   price: 9.99
   category: two
+
+boosterbox:
+  name: Commander Legends Draft Booster Box
+  description: Booster box with 36 boosters
+  price: 108.99
+  category: three
+
+accessory:
+  name: Volcano Playmat
+  description: Red playmat with picture of volcano
+  price: 15.99
+  category: three
