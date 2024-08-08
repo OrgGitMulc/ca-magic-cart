@@ -9,6 +9,17 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
   get '/', :controller => 'products', :action => "index"
 
+  # Set the root path route ("/")
+  root "products#index"
+
+  # Custom paths for easier navigation
+  get 'product', to: 'products#index'
+  get 'category', to: 'categories#index'
+  get 'subcategory', to: 'subcategories#index'
+  
+  get 'product', :controller => 'products', :action => "index"
+  get 'category', :controller => 'categories', :action => "index"
+  get 'subcategory', :controller => 'subcategories', :action => "index"
   # Defines the root path route ("/")
   # root "posts#index"
 end
