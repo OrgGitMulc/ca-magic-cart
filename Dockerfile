@@ -1,4 +1,4 @@
-ARG RUBY_VERSION=3.2.4
+ARG RUBY_VERSION=3.2.3
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
  
 # Install packages needed to build gems
