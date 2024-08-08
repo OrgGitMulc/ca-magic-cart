@@ -26,7 +26,7 @@ class ProductTest < ActiveSupport::TestCase
     assert @product.save, "Product did not save successfully: #{@product.errors.full_messages.join(", ")}"
   end
 
-  test "find product" do
+  test "should find product" do
     # Testing if we can find product using its id and other filters (CRUD functionality)
     @product.save
 
@@ -46,12 +46,20 @@ class ProductTest < ActiveSupport::TestCase
     end
   end
 
-  test "should update todo" do
+  test "should update product" do
     # Test if product can be updated (CRUD functionality)
     @single_product_update = 2.99
     @single_product.update({
       price: @single_product_update
     })
     assert_equal(2.99, @single_product.price)
+  end
+
+  test "should have category" do
+    # Test if product has foreign key value category
+    @product.save
+
+    product_category = Product.find_by(category: @product.category)
+    assert_equal(product_category.category, @product.category)
   end
 end
