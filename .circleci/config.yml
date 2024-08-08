@@ -43,11 +43,11 @@ jobs:
           
       - run:
           name: publish-docker-image
-          command: docker push $DOCKER_USERNAME/$IMAGE_NAME:latest
+          command: docker push $IMAGE_NAME
           
       - run:
           name: run-docker-image
-          command: docker run -p 3000:3000 -d $DOCKER_USERNAME/$IMAGE_NAME
+          command: docker run -p 3000:3000 -d $IMAGE_NAME
           
   deploy:
     docker:
