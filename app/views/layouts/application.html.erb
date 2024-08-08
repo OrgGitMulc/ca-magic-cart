@@ -11,6 +11,19 @@
   </head>
 
   <body>
+
+    <div class="flex-container">
+      <nav>
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Products', products_path %></li>
+        <li><%= link_to 'Categories', categories_path %></li>
+        <li><%= link_to 'Subcategories', subcategories_path %></li>
+      </ul>
+    </nav>
+    </div>
+    
+
     <%= yield %>
   </body>
 </html>
