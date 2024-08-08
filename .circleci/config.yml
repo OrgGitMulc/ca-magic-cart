@@ -27,10 +27,11 @@ orbs:
 executors:
   ruby-executor:
     docker:
-      - image: cimg/ruby:3.2.3-node
+      - image: cimg/ruby:3.2.4-node
 
 jobs:
   test:
+    resource_class: medium
     executor: ruby-executor
     steps:
       - checkout
