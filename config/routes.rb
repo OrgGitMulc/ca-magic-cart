@@ -16,8 +16,4 @@ Rails.application.routes.draw do
   get 'product', to: 'products#index'
   get 'category', to: 'categories#index'
   get 'subcategory', to: 'subcategories#index'
-
-  # get 'product', :controller => 'products', :action => "index"
-  # get 'category', :controller => 'categories', :action => "index"
-  # get 'subcategory', :controller => 'subcategories', :action => "index"
 end
