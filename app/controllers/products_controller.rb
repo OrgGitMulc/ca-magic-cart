@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :load_subcategories, only: [:new, :edit, :create, :update]
 
   # GET /products or /products.json
   def index
@@ -28,6 +29,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
+        load_subcategories
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -65,6 +67,16 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :category_id)
+      params.require(:product).permit(:name, :description, :price, :category_id, :subcategory_id)
+    end
+
+    def load_subcategories
+      @subcategories = if params[:product] && params[:product][:category_id].present?
+                         Subcategory.where(category_id: params[:product][:category_id])
+                       elsif @product && @product.category_id.present?
+                         Subcategory.where(category_id: @product.category_id)
+                       else
+                         []
+                       end
     end
 end
