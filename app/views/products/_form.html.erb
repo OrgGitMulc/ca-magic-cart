@@ -28,12 +28,15 @@
 
   <div>
     <%= form.label :category_id, style: "display: block" %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category", selected: form.object.category_id, onchange: 'this.form.submit();' %>
   </div>
 
   <div class="field">
     <%= form.label :subcategory_id %>
-    <%= form.collection_select :subcategory_id, Subcategory.all, :id, :name, prompt: "Select Subcategory" %>
+    <%= form.collection_select :subcategory_id, 
+      @subcategories, 
+      :id, :name, 
+      prompt: "Select Subcategory" %>
   </div>
 
   <div>

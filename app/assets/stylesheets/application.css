@@ -20,10 +20,11 @@ body {
 .flex-container {
     display: flex;
     background-color: #333;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
-    background-color: #333;
     padding: 1em;
   }
   
@@ -46,4 +47,48 @@ nav {
   nav ul li a:hover {
     text-decoration: underline;
   }
-  
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em; /* Space between the cards */
+  justify-content: space-around; /* Centers the row, with space between the cards */
+}
+
+.product-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  padding: 1em; /* Padding inside the card */
+  width: 14em; /* Fixed width for each card */
+  text-align: center; /* Center the text inside the card */
+}
+
+.product-image {
+  width: 100%; /* Make the image fill the width of the card */
+  height: auto; /* Maintain aspect ratio */
+  border-bottom: 1px solid #ddd; /* Add a border under the image */
+  margin-bottom: 1em; /* Space between the image and the content */
+}
+
+.product-card p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.show-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.show-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  padding: 1em; /* Padding inside the card */
+  width: 21em; /* Fixed width for each card */
+  text-align: center; /* Center the text inside the card */
+  margin-top: 5em;
+}

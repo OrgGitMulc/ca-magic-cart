@@ -2,13 +2,49 @@
 
 <h1>Products</h1>
 
-<div id="products">
+<%= link_to "New product", new_product_path %>
+
+<div class="products-container">
   <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    
+    <div class="product-card">
+
+      <%= image_tag 'mtg_back', class: 'product-image'%>
+
+      <div id="<%= dom_id product %>">
+        <p>
+          <strong>Name:</strong>
+          <%= product.name %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= product.description %>
+        </p>
+
+        <p>
+          <strong>Price:</strong>
+          <%= product.price %>
+        </p>
+
+        <p>
+          <strong>Category:</strong>
+          <%= product.category.name %>
+        </p>
+
+        <% if product.subcategory.present? %>
+          <p>
+            <strong>Subcategory:</strong>
+            <%= product.subcategory.name %>
+          </p>
+        <% end %>
+        <p>
+            <%= link_to "Show this product", product %>
+        </p>
+
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New product", new_product_path %>
+
