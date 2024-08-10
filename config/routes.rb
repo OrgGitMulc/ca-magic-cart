@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   # Set the root path route ("/")
   root "products#index"
 
-  # Custom paths for easier navigation
+  # Custom paths
   get 'product', to: 'products#index'
   get 'category', to: 'categories#index'
   get 'subcategory', to: 'subcategories#index'
+
+  get 'products/by_category/:category_id', to: 'products#index', as: 'by_category_products'
 end
