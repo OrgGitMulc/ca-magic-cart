@@ -1,45 +1,55 @@
-<%= form_with(model: product) do |form| %>
-  <% if product.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class='edit-container'>
+  <div class='edit-card'>
+    <%= form_with(model: product) do |form| %>
+      <% if product.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-        <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% product.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= form.label :name, style: "display: block" %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div>
+        <%= form.label :description, style: "display: block" %>
+        <%= form.text_area :description %>
+      </div>
+
+      <div>
+        <%= form.label :price, style: "display: block" %>
+        <%= form.text_field :price %>
+      </div>
+
+      <div>
+        <%= form.label :category_id, style: "display: block" %>
+        <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category", selected: form.object.category_id, onchange: 'this.form.submit();' %>
+      </div>
+
+      <div>
+        <%= form.label :subcategory_id, style: "display: block" %>
+        <%= form.collection_select :subcategory_id, 
+          @subcategories, 
+          :id, :name, 
+          prompt: "Select Subcategory" %>
+      </div>
+
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+
+    <div class='btns'>
+      <%= link_to "Show this product", @product %> |
+      <%= link_to "Back to products", products_path %>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
   </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select Category", selected: form.object.category_id, onchange: 'this.form.submit();' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subcategory_id %>
-    <%= form.collection_select :subcategory_id, 
-      @subcategories, 
-      :id, :name, 
-      prompt: "Select Subcategory" %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

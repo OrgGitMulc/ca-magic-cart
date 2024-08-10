@@ -22,6 +22,7 @@ body {
     background-color: #333;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
 }
 
 nav {
@@ -91,4 +92,48 @@ nav {
   width: 21em; /* Fixed width for each card */
   text-align: center; /* Center the text inside the card */
   margin-top: 5em;
+}
+
+.edit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edit-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  padding: 1em; /* Padding inside the card */
+  width: 21em; /* Fixed width for each card */
+  text-align: left; /* Center the text inside the card */
+  margin-top: 5em;
+}
+
+.edit-card input, textarea, select {
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+.edit-card label, .btns {
+  text-align: center;
+}
+
+
+.notification-banner {
+  background-color: #d4edda; /* Light green background for success */
+  color: #155724; /* Dark green text color */
+  border: 1px solid #c3e6cb; /* Border color matching the background */
+  padding: 15px; /* Padding inside the banner */
+  width: 50%; /* Set a width for the banner */
+  margin: 20px auto; /* Center the banner horizontally and add some top/bottom margin */
+  text-align: center; /* Center the text inside the banner */
+  border-radius: 5px; /* Rounded corners for the banner */
+  font-family: Arial, sans-serif; /* Optional: Set a font */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.notification-banner p {
+  margin: 0; /* Remove default margins from the paragraph */
 }
