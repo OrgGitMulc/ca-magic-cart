@@ -2,13 +2,29 @@
 
 <h1>Categories</h1>
 
+<%= link_to "New category", new_category_path %>
+
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+
+    <div class='categories-container'>
+      <div class='category-card'>
+        <%= render category %>
+        <p>
+          <%= link_to "Show products", by_category_products_path(category.id) %> |
+          <%= link_to "Show this category", category %>
+        </p>
+        <% if category.name == 'Singles'%>
+          <%= image_tag 'mtg_back', class: 'category-image'%>
+        <% elsif category.name == 'Booster'%>
+          <%= image_tag 'mtg_booster', class: 'category-image'%>
+        <% elsif category.name == 'Accessory'%>
+          <%= image_tag 'mtg_deckbox', class: 'category-image'%>
+        <% else %>
+          <%= image_tag 'cart_logo', class: 'category-image'%>
+        <% end %>
+      </div>
+    </div>
+    
   <% end %>
 </div>
-
-<%= link_to "New category", new_category_path %>
