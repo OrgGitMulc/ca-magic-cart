@@ -45,4 +45,17 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to categories_url
   end
+
+  test "should not create category with wrong inputs" do
+    # Custom functionality tests to test if any fields left null/empty
+    assert_no_difference("Category.count") do
+      post categories_url, params: { category: { name: "" } }  # invalid attribute
+    end
+  
+    assert_response :unprocessable_entity
+  
+    assert_select 'div', text: /prohibited this category from being saved/
+    assert_select 'ul li', text: /Name can't be blank/
+  end
+
 end

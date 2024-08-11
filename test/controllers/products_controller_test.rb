@@ -45,4 +45,19 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+  test "should not create product with wrong inputs" do
+    # Custom functionality tests to test if any fields left null/empty
+    assert_no_difference("Product.count") do
+      post products_url, params: { product: { name: "", price: nil } }  # invalid attributes
+    end
+  
+    assert_response :unprocessable_entity
+  
+    assert_select 'div', text: /prohibited this product from being saved/
+    assert_select 'ul li', text: /Name can't be blank/
+    assert_select 'ul li', text: /Price can't be blank/
+    assert_select 'ul li', text: /Price is not a number/
+  end
+
 end

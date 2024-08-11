@@ -45,4 +45,16 @@ class SubcategoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to subcategories_url
   end
+
+  test "should not create subcategory with wrong inputs" do
+    # Custom functionality tests to test if any fields left null/empty
+    assert_no_difference("Subcategory.count") do
+      post subcategories_url, params: { subcategory: { name: "" } }  # invalid attribute
+    end
+  
+    assert_response :unprocessable_entity
+  
+    assert_select 'div', text: /prohibited this subcategory from being saved/
+    assert_select 'ul li', text: /Name can't be blank/
+  end
 end
