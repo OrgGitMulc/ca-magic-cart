@@ -1,4 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+      <div class="notification-banner">
+        <p><%= notice %></p>
+      </div>
+<% end %>
 
 <h1>Categories</h1>
 
