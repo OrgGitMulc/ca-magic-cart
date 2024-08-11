@@ -1,12 +1,23 @@
-<div id="<%= dom_id subcategory %>">
-  <p>
-    <strong>Name:</strong>
-    <%= subcategory.name %>
-  </p>
+<div class='categories-container'>
+  <div class='sub-card'>
+    <div id="<%= dom_id subcategory %>">
+      <p>
+        <strong>Name:</strong>
+        <%= subcategory.name %>
+      </p>
 
-  <p>
-    <strong>Category:</strong>
-    <%= subcategory.category.name %>
-  </p>
+      <p>
+        <strong>Category:</strong>
+        <%= subcategory.category.name %>
+      </p>
 
+        <%= link_to "Edit this subcategory", edit_subcategory_path(@subcategory) %> |
+        <%= link_to "Back to subcategories", subcategories_path %>
+
+        <%= button_to "Destroy this subcategory", @subcategory, method: :delete %>
+
+    </div>
+  </div>
 </div>
+
+

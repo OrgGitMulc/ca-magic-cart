@@ -2,13 +2,29 @@
 
 <h1>Subcategories</h1>
 
+<%= link_to "New subcategory", new_subcategory_path %>
+
 <div id="subcategories">
   <% @subcategories.each do |subcategory| %>
-    <%= render subcategory %>
-    <p>
-      <%= link_to "Show this subcategory", subcategory %>
-    </p>
+    <div class='categories-container'>
+      <div class='product-card'>
+        <div id="<%= dom_id subcategory %>">
+          <p>
+            <strong>Name:</strong>
+            <%= subcategory.name %>
+          </p>
+
+          <p>
+            <strong>Category:</strong>
+            <%= subcategory.category.name %>
+          </p>
+
+          <p>
+            <%= link_to "Show this subcategory", subcategory %>
+          </p>
+
+          </div>
+        </div>
+      </div>
   <% end %>
 </div>
-
-<%= link_to "New subcategory", new_subcategory_path %>
