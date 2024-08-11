@@ -22,6 +22,10 @@ body {
     background-color: aliceblue;
 }
 
+h1 {
+  text-align: center;
+}
+
 /*Navbar styling*/
 .flex-container {
     display: flex;
@@ -60,7 +64,7 @@ nav {
   background-color: transparent;
   border: none;
   color: white;
-  padding: 10px;
+  padding: 0;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
@@ -164,7 +168,6 @@ nav {
   text-align: center;
 }
 
-
 .notification-banner {
   background-color: #d9ecf2; /* Light blue background for success */
   color: #277cc2; /* Dark blue text color */
@@ -221,4 +224,38 @@ nav {
   width: 18em; /* Fixed width for each card */
   text-align: center; /* Center the text inside the card */
   margin-bottom: 1em;
+}
+
+.new-div {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+.submit-button {
+  background-color: #333;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 8%;
+  min-width: 8%;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-family: Rubik, sans-serif;
+  font-weight: 300;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  opacity: .75;
 }

@@ -12,7 +12,9 @@
   <% end %>
 </h1>
 
-<%= link_to "New product", new_product_path %>
+<div class='new-div'>
+  <%= link_to "New product", new_product_path, class: "submit-button" %>
+</div>
 
 <div class="products-container">
   <% @products.each do |product| %>
@@ -57,12 +59,23 @@
           </p>
         <% end %>
         <p>
-            <%= link_to "Show this product", product %>
+            <%= link_to "Show this product", product, class: "submit-button" %>
         </p>
 
       </div>
     </div>
   <% end %>
 </div>
+
+
+<% if current_page?(root_path) %>
+  <h1>Categories</h1>
+
+  <div>
+    <% @categories.each do |category| %>
+      <%= render partial: 'categories/category', locals: { category: category } %>
+    <% end %>
+  </div>
+<% end %>
 
 

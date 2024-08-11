@@ -42,13 +42,13 @@
       </div>
 
       <div>
-        <%= form.submit %>
+        <%= form.submit "Create Product", class: "submit-button" %>
       </div>
     <% end %>
 
-    <div class='btns'>
-      <%= link_to "Show this product", @product %> |
-      <%= link_to "Back to products", products_path %>
+    <div class='new-div'>
+        <%= link_to "Show this product", @product, class: 'submit-button' %>
+        <%= link_to "Back to products", products_path, class: 'submit-button' %>
     </div>
 
   </div>

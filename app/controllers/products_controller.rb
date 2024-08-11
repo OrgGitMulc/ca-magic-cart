@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
       @product = Product.where(subcategory_id: params[:subcategory_id])
     else
       @products = Product.all
+      @categories = Category.all
     end
   end
 

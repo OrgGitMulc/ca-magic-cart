@@ -27,11 +27,9 @@
           <%= product.subcategory.name %>
         </p>
       <% end %>
-      <%= link_to "Edit this product", edit_product_path(@product) %>
-      |
-      <%= link_to "Back to products", products_path %>
-
-      <%= button_to "Destroy this product", @product, method: :delete %>
+      <%= link_to "Edit this product", edit_product_path(@product), class: "submit-button" %>
+      <%= link_to "Back to products", products_path, class: "submit-button" %>
+      <%= button_to "Destroy this product", @product, method: :delete, class: "submit-button" %>
     </div>
   </div>
 </div>
