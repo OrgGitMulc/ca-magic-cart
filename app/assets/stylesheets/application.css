@@ -26,6 +26,16 @@ h1 {
   text-align: center;
 }
 
+footer {
+  height: auto;
+  background-color: #333;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: -0.4em;
+}
+
 /*Navbar styling*/
 .flex-container {
     display: flex;
