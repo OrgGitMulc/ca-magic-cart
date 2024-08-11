@@ -64,6 +64,7 @@ nav {
   padding: 1em; /* Padding inside the card */
   width: 14em; /* Fixed width for each card */
   text-align: center; /* Center the text inside the card */
+  margin-bottom: 1em;
 }
 
 .product-image {
@@ -166,4 +167,15 @@ nav {
   width: 21em; /* Fixed width for each card */
   text-align: center; /* Center the text inside the card */
   margin-top: 5em;
+}
+
+.sub-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+  padding: 1em; /* Padding inside the card */
+  width: 18em; /* Fixed width for each card */
+  text-align: center; /* Center the text inside the card */
+  margin-bottom: 1em;
 }
