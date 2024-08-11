@@ -6,7 +6,9 @@
 
 <h1>Subcategories</h1>
 
-<%= link_to "New subcategory", new_subcategory_path %>
+<div class='new-div'>
+  <%= link_to "New subcategory", new_subcategory_path, class: "submit-button" %>
+</div>
 
 <div id="subcategories">
   <% @subcategories.each do |subcategory| %>
@@ -24,7 +26,7 @@
           </p>
 
           <p>
-            <%= link_to "Show this subcategory", subcategory %>
+            <%= link_to "Show this subcategory", subcategory, class: "submit-button" %>
           </p>
 
           </div>

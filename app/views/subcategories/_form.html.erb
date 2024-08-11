@@ -24,13 +24,13 @@
       </div>
 
       <div>
-        <%= form.submit %>
+        <%= form.submit "Submit", class: "submit-button" %>
       </div>
     <% end %>
 
-    <div class='btns'>
-      <%= link_to "Show this subcategory", @subcategory %> |
-      <%= link_to "Back to subcategories", subcategories_path %>
+    <div class='new-div'>
+      <%= link_to "Show this subcategory", @subcategory, class: "submit-button" %>
+      <%= link_to "Back to subcategories", subcategories_path, class: "submit-button" %>
     </div>
   </div>
 </div>

@@ -11,10 +11,9 @@
         <%= subcategory.category.name %>
       </p>
 
-        <%= link_to "Edit this subcategory", edit_subcategory_path(@subcategory) %> |
-        <%= link_to "Back to subcategories", subcategories_path %>
-
-        <%= button_to "Destroy this subcategory", @subcategory, method: :delete %>
+        <%= link_to "Edit this subcategory", edit_subcategory_path(@subcategory), class: "submit-button" %>
+        <%= link_to "Back to subcategories", subcategories_path, class: "submit-button" %>
+        <%= button_to "Destroy this subcategory", @subcategory, method: :delete, class: "submit-button" %>
 
     </div>
   </div>

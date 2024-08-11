@@ -6,7 +6,9 @@
 
 <h1>Categories</h1>
 
-<%= link_to "New category", new_category_path %>
+<div class='new-div'>
+  <%= link_to "New category", new_category_path, class: "submit-button" %>
+</div>
 
 <div id="categories">
   <% @categories.each do |category| %>
@@ -20,8 +22,8 @@
           </p>
       </div>
         <p>
-          <%= link_to "Show products", by_category_products_path(category.id) %> |
-          <%= link_to "Show this category", category %>
+          <%= link_to "Show products", by_category_products_path(category.id), class: "submit-button" %>
+          <%= link_to "Show this category", category, class: "submit-button" %>
         </p>
         <% if category.name == 'Singles'%>
           <%= image_tag 'mtg_back', class: 'category-image'%>

@@ -19,12 +19,12 @@
     </div>
 
     <div>
-      <%= form.submit %>
+      <%= form.submit "Submit", class: "submit-button" %>
     </div>
 
-    <div class='btns'>
-      <%= link_to "Show this category", @category %> |
-      <%= link_to "Back to categories", categories_path %>
+    <div class='new-div'>
+      <%= link_to "Show this category", @category, class: "submit-button" %>
+      <%= link_to "Back to categories", categories_path, class: "submit-button" %>
     </div>
   <% end %>
   </div>
