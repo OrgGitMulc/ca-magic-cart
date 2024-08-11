@@ -15,7 +15,15 @@
     
     <div class="product-card">
 
-      <%= image_tag 'mtg_back', class: 'product-image'%>
+      <% if product.category.name == 'Singles'%>
+          <%= image_tag 'mtg_back', class: 'category-image'%>
+        <% elsif product.category.name == 'Booster'%>
+          <%= image_tag 'mtg_booster', class: 'category-image'%>
+        <% elsif product.category.name == 'Accessory'%>
+          <%= image_tag 'mtg_deckbox', class: 'category-image'%>
+        <% else %>
+          <%= image_tag 'cart_logo', class: 'category-image'%>
+      <% end %>
 
       <div id="<%= dom_id product %>">
         <p>
