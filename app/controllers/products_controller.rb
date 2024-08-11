@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
   def index
     if params[:category_id]
       @products = Product.where(category_id: params[:category_id])
+    elsif params[:subcategory_id]
+      @product = Product.where(subcategory_id: params[:subcategory_id])
     else
       @products = Product.all
     end

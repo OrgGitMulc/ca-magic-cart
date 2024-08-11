@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'subcategory', to: 'subcategories#index'
 
   get 'products/by_category/:category_id', to: 'products#index', as: 'by_category_products'
+  get 'products/by_subcategory/:subcategory_id', to: 'products#index', as: 'by_subcategory_products'
 end
