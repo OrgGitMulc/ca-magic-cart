@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path('cart_logo.png') %>
   </head>
 
   <body>
@@ -17,8 +18,13 @@
       <ul>
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Products', products_path %></li>
-        <li><%= link_to 'Categories', categories_path %></li>
-        <li><%= link_to 'Subcategories', subcategories_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <%= link_to 'Categories List', categories_path %>
+            <%= link_to 'Subcategories List', subcategories_path %>
+          </div>
+        </li>
       </ul>
     </nav>
     </div>
