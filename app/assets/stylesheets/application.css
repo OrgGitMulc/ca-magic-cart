@@ -22,7 +22,7 @@ body {
     background-color: aliceblue;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
@@ -101,38 +101,39 @@ nav {
   opacity: .75;
 }
 
-/* Show the dropdown menu on hover */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/*Styling for the products models*/
 .products-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em; /* Space between the cards */
-  justify-content: space-around; /* Centers the row, with space between the cards */
+  gap: 1em; 
+  justify-content: space-around;
 }
 
 .product-card {
-  background-color: #f9f9f9; /* Light background for the card */
-  border: 1px solid #ddd; /* Border for the card */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
-  padding: 1em; /* Padding inside the card */
-  width: 14em; /* Fixed width for each card */
-  text-align: center; /* Center the text inside the card */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 1em; 
+  width: 14em; 
+  text-align: center; 
   margin-bottom: 1em;
 }
 
 .product-image {
-  width: 100%; /* Make the image fill the width of the card */
-  height: auto; /* Maintain aspect ratio */
-  border-bottom: 1px solid #ddd; /* Add a border under the image */
-  margin-bottom: 1em; /* Space between the image and the content */
+  width: 100%; 
+  height: auto; 
+  border-bottom: 1px solid #ddd; 
+  margin-bottom: 1em; 
 }
 
 .product-card p {
-  margin: 5px 0; /* Space between paragraphs */
+  margin: 5px 0; 
 }
 
 .show-container {
@@ -142,13 +143,13 @@ nav {
 }
 
 .show-card {
-  background-color: #f9f9f9; /* Light background for the card */
-  border: 1px solid #ddd; /* Border for the card */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
-  padding: 1em; /* Padding inside the card */
-  width: 21em; /* Fixed width for each card */
-  text-align: center; /* Center the text inside the card */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1em; 
+  width: 21em; 
+  text-align: center; 
   margin-top: 5em;
 }
 
@@ -159,13 +160,13 @@ nav {
 }
 
 .edit-card {
-  background-color: #f9f9f9; /* Light background for the card */
-  border: 1px solid #ddd; /* Border for the card */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
-  padding: 1em; /* Padding inside the card */
-  width: 21em; /* Fixed width for each card */
-  text-align: left; /* Center the text inside the card */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 1em; 
+  width: 21em; 
+  text-align: left; 
   margin-top: 5em;
 }
 
@@ -178,55 +179,58 @@ nav {
   text-align: center;
 }
 
+/*Styling for the notification div*/
 .notification-banner {
-  background-color: #d9ecf2; /* Light blue background for success */
-  color: #277cc2; /* Dark blue text color */
-  border: 1px solid #b0d6e8; /* Border color matching the background */
-  padding: 15px; /* Padding inside the banner */
-  width: 50%; /* Set a width for the banner */
-  margin: 20px auto; /* Center the banner horizontally and add some top/bottom margin */
-  text-align: center; /* Center the text inside the banner */
-  border-radius: 5px; /* Rounded corners for the banner */
-  font-family: Arial, sans-serif; /* Optional: Set a font */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+  background-color: #d9ecf2; 
+  color: #277cc2; 
+  border: 1px solid #b0d6e8; 
+  padding: 15px; 
+  width: 50%; 
+  margin: 20px auto; 
+  text-align: center; 
+  border-radius: 5px; 
+  font-family: Arial, sans-serif; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .notification-banner p {
   margin: 0; /* Remove default margins from the paragraph */
 }
 
+/*Styling for the categories and subcategories models*/
 .categories-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em; /* Space between the cards */
-  justify-content: space-around; /* Centers the row, with space between the cards */
+  gap: 1em; 
+  justify-content: space-around; 
 }
 
 .category-card {
-  padding: 1em; /* Padding inside the card */
-  width: 15em; /* Fixed width for each card */
-  text-align: center; /* Center the text inside the card */
+  padding: 1em; 
+  width: 15em; 
+  text-align: center; 
   border: 1px solid black;
   margin-bottom: 1em;
 }
 
 .category-image {
-  width: 100%; /* Make the image fill the width of the card */
-  height: auto; /* Maintain aspect ratio */
-  margin-top: 1em; /* Space between the image and the content */
+  width: 100%; 
+  height: auto; 
+  margin-top: 1em; 
 }
 
 .destroy-card {
-  background-color: #f9f9f9; /* Light background for the card */
-  border: 1px solid #ddd; /* Border for the card */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
-  padding: 1em; /* Padding inside the card */
-  width: 21em; /* Fixed width for each card */
-  text-align: center; /* Center the text inside the card */
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 1em; 
+  width: 21em; 
+  text-align: center; 
   margin-top: 5em;
 }
 
+/*Styling for the submit btns*/
 .sub-card {
   background-color: #f9f9f9;
   border: 1px solid #ddd; 
@@ -270,4 +274,10 @@ nav {
 .submit-button:hover,
 .submit-button:focus {
   opacity: .75;
+}
+
+.about-div {
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 1em;
 }

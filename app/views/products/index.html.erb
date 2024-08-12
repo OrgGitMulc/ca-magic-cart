@@ -12,6 +12,23 @@
   <% end %>
 </h1>
 
+<% if current_page?(root_path) %>
+  <h2>About Us:</h2>
+
+  <div class='about-div'>
+    <p>
+      Here at Magic Cart, our mission is to open the world of Magic: The Gathering to our customers. We have all your MTG needs at hand!
+      Choose from our wide array of singles for all your trading card needs. 
+    </p>
+    <p>
+      Or better yet check out our new selection of accessories which includes Dragon Shield's latest matte sleeves!
+    </p>
+    <p>
+      If you need any additional assitance, please don't hesitate to contact a member of our team
+    </p>
+  </div>
+<% end %>
+
 <div class='new-div'>
   <%= link_to "New product", new_product_path, class: "submit-button" %>
 </div>
