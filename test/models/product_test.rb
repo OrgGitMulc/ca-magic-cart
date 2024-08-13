@@ -14,7 +14,7 @@ class ProductTest < ActiveSupport::TestCase
     @single_product = products(:single)
   end
 
-  test "test .yml file" do
+  test "test fixtures file" do
     # Testing if products.yml file products are available
     product = products(:single)
     assert product.save
